@@ -9,3 +9,29 @@ Posibility for easy saving of multiple datatables as sheets to excels file wilt 
 Are not able to append sheets to an existing file, since this will destroy preveous formulas and formatting, so overwrite should be set to FALSE by default.
 
 Any commments are welcome
+
+# Install
+devtools::install_github("Hannibal83dk/exceltools")
+library(exceltools)
+
+# Example
+
+> library(exceltools)
+> 
+> table1 <- readsheet()
+Choose an excel file to read a sheet
+1 Tissue 
+2 Blood  
+Select: 
+> 1
+>
+> table2 <- readsheet()
+Choose an excel file to read a sheet
+1 Tissue 
+2 Blood  
+Select: 
+> 2
+>
+> createexcelfile("Tissue_blood_data", table1, table2)
+> createexcelfile("Tissue_blood_data", table2, table1, overwrite = TRUE)
+
