@@ -12,6 +12,7 @@ Any commments are welcome
 
 # Install
 devtools::install_github("Hannibal83dk/exceltools")
+
 library(exceltools)
 
 # Example
@@ -19,19 +20,28 @@ library(exceltools)
 > library(exceltools)
 > 
 > table1 <- readsheet()
+> 
 Choose an excel file to read a sheet
+
 1 Tissue 
+
 2 Blood  
+
 Select: 
 > 1
 >
 > table2 <- readsheet()
+
 Choose an excel file to read a sheet
+
 1 Tissue 
+
 2 Blood  
+
 Select: 
 > 2
 >
 > createexcelfile("Tissue_blood_data", table1, table2)
+> 
 > createexcelfile("Tissue_blood_data", table2, table1, overwrite = TRUE)
 
