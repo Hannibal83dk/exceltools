@@ -1,0 +1,3 @@
+createexcelfile         Create an excel file and save your tables as
+                        sheets in that document
+readsheet               load specific sheets from a chosen excel file

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create an excel file and save your tables as sheets in that...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for createexcelfile {exceltools}"><tr><td>createexcelfile {exceltools}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create an excel file and save your tables as sheets in that document</h2>
+
+<h3>Description</h3>
+
+<p>As of yet there is no way of giving the sheets other names.
+The sheets in the resulting document will therefore inherit the variable names given in this function.
+e.g. table1 will give rise to a sheet in the excel document called table1.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+createexcelfile(title, ..., overwrite = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>title</code></td>
+<td>
+<p>A filename for the excel file to be created</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>A number of dataframes to be used as sheets for the new excel file</p>
+</td></tr>
+<tr valign="top"><td><code>overwrite</code></td>
+<td>
+<p>A logical toggle to choose whether to overwrite a potential existing file</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A tibble containing the data from the chosen sheet
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>exceltools</em> version 0.1.02 <a href="00Index.html">Index</a>]</div>
+</body></html>
