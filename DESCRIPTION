@@ -1,0 +1,16 @@
+Package: exceltools
+Type: Package
+Title: Tools for loading and saving excell files and sheets
+Version: 0.1.03
+Author: Patrick Petersen
+Maintainer: Patrick Petersen <dalsbo83@gmail.com>
+Depends: openxlsx, readxl
+Description: A small package to manage excell sheets in R
+    If no path is given as a parameter a popup file select window appear for selecting excel file. If no sheet number is given as a parameter, 
+    available sheets will be shown in the command line and to let you select one to load.
+    Posibility for easy saving of multiple datatables as sheets to excels file wilt automatic file ending, so only name is required.
+    Are not able to append sheets to an existing file, since this will destroy preveous formulas and formatting, so overwrite should be set to FALSE by default.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
