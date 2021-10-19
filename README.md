@@ -22,32 +22,34 @@ library(exceltools)
 > library(exceltools)
 > 
 > table1 <- readsheet()
-> 
+
 Choose an excel file to read a sheet
 
-1 Tissue 
+1 Tissue
 
 2 Blood  
 
 Select: 
 > 1
->
-> table2 <- readsheet()
 
-> path <- choose.files()
-> table3 <- readsheet(path)
-> table4 <- readsheet(path, 2)
+> table2 <- readsheet()
 
 Choose an excel file to read a sheet
 
-1 Tissue 
+1 Tissue
 
 2 Blood  
 
 Select: 
 > 2
->
+
+> path <- choose.files()
+> 
+> table3 <- readsheet(path)
+> 
+> table4 <- readsheet(path, 2)
+
+
 > createexcelfile("Tissue_blood_data", table1, table2)
 > 
 > createexcelfile("Tissue_blood_data", table2, table1, overwrite = TRUE)
-
