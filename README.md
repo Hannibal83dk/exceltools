@@ -33,7 +33,7 @@ Select:
 > 1
 >
 > table2 <- readsheet()
-> 
+
 > path <- choose.files()
 > table3 <- readsheet(path)
 > table4 <- readsheet(path, 2)
