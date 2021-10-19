@@ -32,33 +32,34 @@ chooseSheet <- function(sheets){
 #' @return A tibble containing the data from the chosen sheet
 #' @export
 #'
-readsheet <- function(filepath = NULL, sheet = NULL){
 
-  if (is.null(filepath)){
+readsheet <- function(filepath = NULL, sheet = NULL){
+  
+  if(is.null(filepath)){
     cat("Choose a file to open\n")
     filepath <- file.choose()
   }
-
+  
   sheets <- excel_sheets(filepath)
-
-  if(length(sheets) < sheet){
-    cat("The sheet number provided is larger then the available number of sheets\n")
-  }
-
-  if(length(sheets) == 1)
-    {
-      cat("Only one sheet avalable, selecting sheet 1\n" )
-      sheet = 1
-    } else if (is.null(sheet) || length(sheets) < sheet)
-      {
+  
+  
+  if(is.null(sheet))
+  {
+    if(length(sheets) == 1){
+      sheets = 1
+    } else {
         cat("Choose a sheet to load \n")
         sheet <- chooseSheet(sheets)
       }
-
-  ##  need only pick first sheet if there only is one, then no selecteion from user
-
+  
+  } else if(length(sheets) < sheet){
+    cat("The sheet number provided is larger then the available number of sheets\n")
+    cat("Choose a sheet to load \n")
+    sheet <- chooseSheet(sheets)
+  }
+  
   datasheet <- read_excel(filepath, sheet = sheet)
-
+  
   return(datasheet)
 }
 
