@@ -33,7 +33,7 @@ chooseSheet <- function(sheets){
 #' @export
 #'
 
-readsheet <- function(filepath = NULL, sheet = NULL){
+readsheet <- function(filepath = NULL, sheet = 0){
   
   if(is.null(filepath)){
     cat("Choose a file to open\n")
