@@ -32,34 +32,59 @@ chooseSheet <- function(sheets){
 #' @return A tibble containing the data from the chosen sheet
 #' @export
 #'
+readsheet <- function(filepath = NULL, sheet = 1){
 
-readsheet <- function(filepath = NULL, sheet = 0){
-  
-  if(is.null(filepath)){
+  if (is.null(filepath)){
     cat("Choose a file to open\n")
     filepath <- file.choose()
   }
-  
+
   sheets <- excel_sheets(filepath)
-  
-  
-  if(is.null(sheet))
-  {
-    if(length(sheets) == 1){
-      sheets = 1
-    } else {
-        cat("Choose a sheet to load \n")
-        sheet <- chooseSheet(sheets)
-      }
-  
-  } else if(length(sheets) < sheet){
-    cat("The sheet number provided is larger then the available number of sheets\n")
+
+
+  # is sheet is not numeric
+  if(!is.numeric(sheet)){
+    cat("1 The sheet number provided is not a positive numeric integer value\n")
     cat("Choose a sheet to load \n")
     sheet <- chooseSheet(sheets)
   }
-  
+
+  # sheet is negative
+  if(sheet <= 0){
+    cat("2 The sheet number provided is not a positive numeric integer value\n")
+    cat("Choose a sheet to load \n")
+    sheet <- chooseSheet(sheets)
+  }
+
+  if(length(sheets) < sheet){
+    cat("The sheet number provided is larger then the available number of sheets\n")
+  }
+
+
+
+  if(length(sheets) == 1)
+  {
+    cat("Only one sheet avalable, selecting sheet 1\n" )
+    sheet = 1
+  } else if (is.null(sheet) || length(sheets) < sheet)
+  {
+    cat("Choose a sheet to load \n")
+    sheet <- chooseSheet(sheets)
+  }
+
+
+
+
+
+
+  # cat(paste0('Sheet', length(sheets)))
+
+
+
+  ##  need only pick first sheet if there only is one, then no selecteion from user
+
   datasheet <- read_excel(filepath, sheet = sheet)
-  
+
   return(datasheet)
 }
 

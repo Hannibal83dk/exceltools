@@ -1,7 +1,7 @@
 Package: exceltools
 Type: Package
 Title: Tools for loading and saving excell files and sheets
-Version: 0.1.03
+Version: 0.1.04
 Author: Patrick Petersen
 Maintainer: Patrick Petersen <dalsbo83@gmail.com>
 Depends: openxlsx, readxl
